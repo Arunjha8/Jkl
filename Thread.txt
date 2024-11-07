@@ -1,0 +1,113 @@
+			Thread
+			
+			Book
+
+Thread - Thread are lightweight because they can share their allocated resources like memory, open files, open connections etc.
+
+Process - A process has a self-contained execution environment. Each process has its own memory space. Process cannot share its memory and other resources.
+
+Monitor - Monitor is a lock that makes sequential access to an object or a class.
+			1. Class monitor     2. Object monitor
+			
+Multithreading - It refers to an application with multiple thread running within a process. These thread are called Light Weight Process.
+Multiprocessing - It is the execution of one or more process by multiple processors inside one computer. They both work at the same time and execute concurrently by OS.
+
+Thread LifeCycle - New Born, Runnable, Blocked/Waiting, Dead/Terminated.
+ New Born State - When an instance of thread is created it enters into newly born state.
+ Runnable State - Once start() is called thread goes to runnable state that has Ready Queue.
+ Blocked State - Thread is sleeping for given time and suspended for infinite time. It is called Blocked/Waiting State.
+ Dead State - A thread can be considered dead when its run() is finished or its stop() is called.
+ 
+Starvation - Starvation describes a situation where a thread is unable to gain regular access to shared resources and is unable to make progress.
+
+			Blog
+
+Q. How do you make Thread class?
+A. 1. By extending Thread class    2. by implementing Runnable interface
+
+Q. How two threads can communicate with each other?
+A. With the help of shared memory area.
+
+Q. How two processes can communicate with each other?
+A. With the help of Environment variables.
+
+Q. What are the differences between process and thread?
+A. Process contains thread. Thread share memory area whereas Process do not share memory area.
+
+Q. Why thread is called lightweight processes?
+A. Since they share resources so consume fewer resources than process.
+
+Q. What is a Daemon thread?
+A. It is a supporting thread, provides supporting services to other threads like garbage-collector. The Garbage collector is a deamon thread.
+
+Q. What is a green thread?
+A. It is created by JVM and controlled by JVM.
+
+Q. What is a native thread?
+A. It is created by JVM and controlled by Operating System (OS).
+
+Q. What is a deadlock?
+A. When two or more thread are waiting for releasing a Lock forever, is called deadlock condition.
+
+Q. What is starvation or live-lock and when it occur?
+A. It occurs in case of non-primitive scheduling.
+
+Q. What is a racing condition?
+A. When multiple thread try to access same resources(object) concurrently.
+
+Q. How do you solve racing problems?
+A. It is resolved with the help of synchronization.
+
+Q. What is Synchronization?
+A. It is used to resolve race condition on an object. It allow access to only one thread on an object at a time.
+
+Q. How many types of synchronizations are there?
+A. One is block synchronization and implemented using a synchronized block, the second is method synchronization, the entire method is synchronized in this.
+
+Q. What is block/method synchronization?
+A. 
+
+Q. What is a monitor key?
+A. 
+
+Q. How many Monitor keys are assigned to a class?
+A. There are two monitor keys, one for static method and one for instance method.
+
+Q. What is the minimum priority of a thread?
+A. 1
+
+Q. What is the maximum priority of a thread?
+A. 10
+
+Q. What is the normal priority of ta thread?
+A. 5
+
+Q. How can you change the priority of a thread?
+A. Using setPriority(n).
+
+Q. How many methods are contained by the Runnable interface?
+A. It has only one method run().
+
+Q. What are the differences between Process and Thread?
+A. Process contains thread. Thread share memory area whereas Process do not share memory area.
+
+Q. What are the differences between Green and Native threads?
+A. N.T. are created by JVM and scheduling by native OS. Since they are scheduled by native environment that why it is called N.T.
+   G.T. are created by JVM and scheduling by JVM. "Green" was the name of JVM thread project library so these thread are called G.T. Another name Cooperative Thread.
+
+Q. What are the differences between wait(), notify(), and notifyAll()?
+A. wait() - calling thread will release the lock and go in Blocked state. When other thread comes into same lock and call the notify() then waiting thread will be activated and go
+            in the ready queue.
+   notify() - wakes up first thread that called wait() on the same monitor.
+   notifyAll() - wakes up all the thread that called wait() on the same monitor. The highest priority thread will run first.
+
+Q. What are the differences between wait(), and join()?
+A. Wait() - calling thread will release the lock (monitor) and go in the Blocked state.
+			When another thread comes into same monitor   and call notify() method then waiting thread will be activated and go in the ready queue.
+   join() - calling thread will not release the lock. but will give chance to join thread to be executed first.
+			As soon as Join thread execution is finished, calling thread again acquires the same lock and start execution.
+
+Q. What is a Monitor(Keys)?
+A. It is a lock that will be used to sequently access an object or a class. There are two monitors keys.
+   1. Class Monitor - It is applied to synchronized static methods.
+   2. Object Monitor - It is applied to synchronized instance methods.

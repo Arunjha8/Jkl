@@ -1,0 +1,28 @@
+2024-09-22 15:01:19 DEBUG TestLog:11 - This is debug message
+2024-09-22 15:01:19 INFO  TestLog:12 - This is info message
+2024-09-22 15:01:19 WARN  TestLog:13 - This is warn message
+2024-09-22 15:01:19 ERROR TestLog:14 - This is error message
+2024-09-22 15:01:19 FATAL TestLog:15 - This is fatal message
+2024-09-22 15:01:19 ERROR TestLog:21 - java.lang.ArithmeticException: / by zeroThis is error message
+2024-09-23 11:51:31 DEBUG TestLog:10 - This is debug message
+2024-09-23 11:51:31 INFO  TestLog:11 - This is info message
+2024-09-23 11:51:31 WARN  TestLog:12 - This is warn message
+2024-09-23 11:51:31 ERROR TestLog:13 - This is error message
+2024-09-23 11:51:31 FATAL TestLog:14 - This is fatal message
+2024-09-23 11:51:31 ERROR TestLog:20 - java.lang.ArithmeticException: / by zeroThis is error message
+2024-09-23 12:12:59 DEBUG TestLog:10 - This is debug message
+2024-09-23 12:12:59 INFO  TestLog:11 - This is info message
+2024-09-23 12:12:59 WARN  TestLog:12 - This is warn message
+2024-09-23 12:12:59 ERROR TestLog:13 - This is error message
+2024-09-23 12:12:59 FATAL TestLog:14 - This is fatal message
+2024-09-23 12:12:59 INFO  TestLog:26 - Arithmetic Error
+java.lang.ArithmeticException: / by zero
+	at Log4j.TestLog.main(TestLog.java:20)
+2024-09-23 12:14:06 DEBUG TestLog:10 - This is debug message
+2024-09-23 12:14:06 INFO  TestLog:11 - This is info message
+2024-09-23 12:14:06 WARN  TestLog:12 - This is warn message
+2024-09-23 12:14:06 ERROR TestLog:13 - This is error message
+2024-09-23 12:14:06 FATAL TestLog:14 - This is fatal message
+2024-09-23 12:14:06 INFO  TestLog:32 - Arithmetic Error
+java.lang.ArithmeticException: / by zero
+	at Log4j.TestLog.main(TestLog.java:26)

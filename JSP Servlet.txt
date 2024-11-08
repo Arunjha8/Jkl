@@ -1,0 +1,234 @@
+			JSP/Servlet
+
+JSP/Servlet - JSP/Servlet are the server side programme to produce dynamic response on a client request.
+
+JSP - JSP stands for Java Server Pages. This is the special form of servlet to develop web pages.
+
+Web Application - The application that is accessed by a web browser using HTTP protocol is called a web application.
+
+HTML - HTML is a markup language that contains markup tags. It is used to develop web pages.  (Hyper Text Markup Language)
+
+HTTP - HTTP is an application communication protocol between server and client. It is used to transfer data over the web.   (Hyper Text Transfer Protocol)
+
+URI - It is the location of page to be accessed.
+
+URL - URL is used to locate a resource on the web server.
+
+Web Container - Container is responsible to compile, execute and manage lifecycle of server resources. It can be referred as a Web Server.
+
+JSP Conversion - A JSP is nothing but a servlet. A JSP is translated into the servlet on its first client request.
+
+Servlet - Servlets are special type of java classes that produce dynamic web contents to develop a web application.
+
+CGI - CGI is the traditional approach to produce dynamic web contents and develop a web application.   (Common Gateway Interface)
+
+HttpServletRequest Object - An Http call to a servlet from browser is called request.
+
+Request parameters - Client can send some custom parameters along with Url to a servlet. These parameters are called request parameters.
+
+HttpServletResponse Object - Data returned by a servlet for an Http request is called response.
+
+Difference GET and POST.from book    pageNo 81
+
+Servlet Lifecycle - The lifecycle of a servlet is controlled by its container. It has three life cycle methods init(), service() and destroy().
+					<load-on-startup>1</load-on-startup>,   @WebServlet(urlPatterns="/Setting", loadOnStartup=1)
+
+Cookie - Cookie is a pair of Key and Value Strings. Server sends cookie as a part of response header.  Cookie c = new Cookie(name, value);
+
+Session Handling - Session is a conversation between Browser(Web Client) and Web Server. Session consists of multiple http requests. 93 pageNo.
+
+Destroy a Session - session.invalidate();
+
+Session Timeout - Defining inactive time interval for a session in such applications is called session-timeout time.
+	1. Configure web.xml deployment descriptor for a web application.  <session-config> <session-timeout>20</session-timeout> </session-config>
+	2. Use session.setMaxInactiveInterval() method to set inactive interval for a session object.  session.setMaxInactiveInterval(20*60);
+
+Session Tracking - In order to track the session, client needs to remember unique Session ID sent by server.
+				   There are 3 ways to track the session between client and server.
+			1. Cookie - Browser uses cookies to store the Session ID sent by server.
+			2. Hidden Form Fields -  <FORM method = "GET">
+									 <INPUT type = "hidden" name = "jessionid" value = "<%= session.getId() %>" />
+									 <INPUT type="text" name="n" />
+									 <INPUT type="submit" />
+									 </FORM>
+			3. URL Rewriting - A user can navigate from one page to another page using hypertext links.  response.encodeURL("/Catalog");
+
+Error Page Mapping - <error-page> <error-code>403</error-code> <location>/ErrorHandler</location> </error-page>
+
+109,111,129,145,150 page read
+
+JSP Lifecycle - 1. jspInit() 		2. _jspService()		 3. jspDestroy()
+
+JSP Element/Tag - 1. Scriptlet tag		2. Expression tag		3. Declaration tag
+	1. Scriptlet Tag - Scriptlet tag is used to write Java control statements inside a JSP page.
+	2. Expression Tag - Expression tag is used to add result of one line expression in the html response.
+	3. Declaration Tag - Declaration tag is used to declare instance variables or methods of a JSP.
+
+Implicit Object - Servlet container provides some predefined objects to all JSP pages of an application are called Implicit object.
+		Request, Response, Session, Application, Config, Page, Page Context, Out, Exception
+
+Scope - Page, Request, Session, Application
+
+File Upload - HTML provides multipart form to upload one or more files to a web application using post HTTP request.
+
+Front Controller - Main Controller perform session checking and logging operation before calling any application controller. It prevent any user to access application without login.
+
+Tag - Scripting tag, Declarative tag, Action tag.
+	  Scriptlet tag, Expression tag, Declaration tag, JSP comments.
+	  Page directive, Include directive, Taglib directive.  (error-page)
+	  The jsp:includeaction tag, The jsp:forwardaction tag, The jsp:useBeanaction tag, The jsp:setPropertyaction tag, The jsp:getPropertyaction tag, The jsp:pluginaction tag
+
+Filters - Filters are used to perform pre-processing and post-processing operation on a client request and response.
+Listeners - A Listener listens to lifecycle and attribute change event of request, session and servlet context objects.
+
+			Directive tag 										Action tag
+  1. Includes file into JSP at translation time.           Includes file response into JSP's response at runtime.
+  2. If included file is changed but not the JSP           Changes will always be reflected.
+     then changes will not be reflected.
+  3. Cannot pass request parameters.                       Can pass request parameters.  <jsp:include page="Menu.jsp"/> <jsp:param name="role" value="member"/> </jsp:include>
+  4. Used for static contents like Header.jsp              Used for dynamic contents like role based menu.
+  
+  
+		Blog
+
+Q. What is ServletContext?
+A. ServletContext is a single object created for all Servlet for a Web Server.
+   It can be retrieved by getServletContext method in a Servlet and can be accessed by ‘application’ implicit object in JSPs.
+
+Q. What is ServletConfig?
+A. An instance of ServletConfig is created for each servlet. It is used to pass initialization parameters to Servlet by Container using web.xml file.
+   It can be retrieved by getServletConfig method in a Servlet and can be accessed by ‘config’ implicit object in JSPs.
+
+Q. How do you access ServletContext object in a JSP?
+A. Using application implict object
+
+Q. How do you access ServletConfig object in a JSP?
+A. Using config implict object
+
+Q. How do you store a value in the ServletContext object
+A. Using application.setAttribute() method.
+
+Q. How do you store a value in the ServletConfig object
+A. Using <init-param> tag in web.xml
+
+Q. If you store data into ServletContext object then how many users of the application can access this data? 
+A. All user can access.
+
+Q. Why do you use CSS?
+A. Cascading Style Sheets (CSS) is a style sheet language used to define the look and feel of HTML pages.
+
+Q. How can you include a .css file in a JSP or HTML
+A. Use <link> tag inside <head> tag.
+
+Q. What is the function of <style> tag?
+A. To define custom style classes.
+
+Q. What is the function of the <link> tag?
+A. To add a CSS file.
+
+Q. How do you create a class in the .css file?
+A. A class name is prefixed by a decimal point and the class body is specified by curly braces. Class body contain look and feel properties.
+
+Q. Do you create custom CSS in your application?
+A. No, we have use Bootstrap to make our UI,Bootstrap contains CSS.  V - 4.4.1
+
+Q. What are the differences between Filters and Listeners defined in web.xml?
+A. Filters - 
+		1. Filters are called on every user request. The filter can be attached with a single JSP/Servlet or with multiple JSP/Servlet using wildcard mapping.
+		2. Filters are configured by <FILTER> tag in web.xml.
+   Listeners - 
+        Listeners are event-driven and called on different server events. Events are generated when
+		1. ServletContext is created, destroyed and the first request is received.
+		2. Attributes are added, changed, and removed from ServletContext
+		3. The session is created, invalidated or timed-out
+		4. Attributes are added, changed, and removed from Session
+		5. Listeners are configured by <LISTENER> tag in web.xml.
+		
+Q. Why do you use Filter in your application?
+A. We use filter in our application for implementing Front Controler.
+
+Q. How do you create a filter?
+A. By using @WebFilter.
+
+Q. Can you map one filter with multiple servlets?
+A. Yes
+
+Q. Can you map multiple filters with multiple servlets?
+A. Yes
+
+Q. How do you create a listener?
+A. By using @WebListner.
+
+Q. Why did you use Filter in your application?
+A. We have made Front Control in our application using filter.
+
+Q. What is the functionality of the Front Controller?
+A. It does authenticate and authorization in our application.
+
+Q. Where will you use SingleThreadModel servlets in your application?
+A. We do not use it because it is deprecated now.
+
+Q. What is Signle Thread Model servlet.
+A. It can handle only one request at a time.
+
+Q. Why not declare a constructor in servlet?  
+A. Technically you can define constructors in servlet. But, the declared constructor cannot access the ServletConfig object or throw a ServletException.
+   The init() method is used to perform servlet initialization that can use ServletConfig object.
+   Since Container instantiates Servelet so always default constructor is called. Parameter constructors will be of no use.
+   
+Q. How you can create a Servlet without using Java Editor or Java Wizard?
+A. You can type Servlet code in Notepad and compile in into WEB-INF/classes folder. 
+
+Q. When an instance of a servlet is created?
+A. Instance of a servlet is created when 
+   1. The servlet is started if the load-on-startup tag is used. OR
+   2. The first client request is received at the server.
+
+Q. What is the function of the load-on-startup tag?
+A. It loads servlet at the tie of server startup. Rest all servlets loaded at the time of first client request.
+
+Q. Why do you pass an integer value to load-on-startup tag?
+A. It shows the loading order of servlets at the time of server startup.
+
+Q. How do you create aServlet ?
+A. Using @WebServlet Annotation.
+
+Q. How do you load a servlet at server startup
+A. Using loadOnStartup attribute of @WebServlet Annotation.
+
+Q. Why HTTP is called stateless protocol?
+A. Because it does not remember user state. Every request is considered and fresh request.
+
+Q. What is Servlet/JSP Lifecycle?
+A. Servlet - init, service, destroy.
+   JSP - jspInit, _jspService, jspDestroy.
+
+Q. Why do you use JSP and Servlets in an application?
+A. We use JSP as a view and Servlet as a controller.
+
+Q. Why do you use Servlet as controller?
+A. As per MVC Guidelines.
+
+Q. Why do you use JSP as view?
+A. As per MVC Architechture we use JSP as a view.
+
+Q. How many instances of a Servlet/JSP are created for handling multiple user requests?
+A. Only one instance, for each user request a separate thread is created and service method is executed inside that thread.
+
+Q. Can you define Servlet instance/static/class attributes/variables? Is it advisable to define servlet’s instance/static/class attributes/variables?
+A. Yes
+
+Q. Why HTTP is called stateless protocol?
+A. Because it does not remember the user state. Every request is considered and fresh request.
+
+Q. How do you manage the state of a User?
+A. With the help of Session.
+
+Q. How Session is tracked?
+A. Session is tracked by SessionID.
+
+Q. How session is tracked if Cookie is off?
+A. With the help of URL Rewriting.     HttpServletResponse.encodeRedirectURL
+
+Q. What is URL rewriting?
+A. When Cookie is disabled in a browser that time. URL rewriting is the way to track the session.
